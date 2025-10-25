@@ -44,7 +44,7 @@ You will need a local server environment with PHP and MySQL.
 
 1.  **Clone the repo**
     ```sh
-    git clone [https://github.com/](https://github.com/)[johnlouie-navales]/research-repository.git
+    git clone https://github.com/johnlouie-navales/research-repository.git
     ```
 
 2.  **Navigate to the project directory**
@@ -58,9 +58,10 @@ You will need a local server environment with PHP and MySQL.
     * Import the `.sql` file (you can add your exported SQL dump to the repo, maybe in a `/database` folder) to create all the tables.
 
 4.  **Configure Database Connection**
-    * Navigate to the `config/` directory.
-    * Rename `database.example.php` to `database.php` (or edit `database.php` directly).
-    * Update the file with your local database credentials (username, password, database name).
+    * In the `config/` directory, find the template file named `database.example.php`.
+    * Create a copy of this file and rename the copy to `database.php`.
+    * This new `database.php` file is already listed in `.gitignore`, so your credentials will remain private.
+    * Open `database.php` and fill in your local database `username`, `password`, and `database` name.
 
 5.  **Run the Application**
     * Point your local web server (Apache in XAMPP) to the project's root directory.
