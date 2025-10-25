@@ -1,5 +1,9 @@
 <?php
 
+namespace App;
+
+use mysqli;
+
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 abstract class Model
@@ -29,7 +33,7 @@ abstract class Model
     private static function setConnection(): void
     {
         if (self::$conn === null) {
-            require __DIR__ . '/../config/database.php';
+            require __DIR__ . '/config/database.php';
 
             if (isset($conn)) {
                 self::$conn = $conn;

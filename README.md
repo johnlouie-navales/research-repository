@@ -39,6 +39,7 @@ To get a local copy up and running, follow these simple steps.
 
 You will need a local server environment with PHP and MySQL.
 * [XAMPP](https://www.apachefriends.org/) or any similar stack (WAMP, MAMP, LAMP).
+* [composer](https://getcomposer.org/) PHP Dependency Manager
 
 ### Installation
 
@@ -51,19 +52,23 @@ You will need a local server environment with PHP and MySQL.
     ```sh
     cd research-repository
     ```
+3. **enerate autoloader**
+    ```sh
+    composer dump-autoload
+    ```
 
-3.  **Set up the Database**
+4. **Set up the Database**
     * Open your MySQL admin tool (e.g., phpMyAdmin).
     * Create a new database named `research-repository`.
     * Import the `.sql` file (you can add your exported SQL dump to the repo, maybe in a `/database` folder) to create all the tables.
 
-4.  **Configure Database Connection**
+5. **Configure Database Connection**
     * In the `config/` directory, find the template file named `database.example.php`.
     * Create a copy of this file and rename the copy to `database.php`.
     * This new `database.php` file is already listed in `.gitignore`, so your credentials will remain private.
     * Open `database.php` and fill in your local database `username`, `password`, and `database` name.
 
-5.  **Run the Application**
+6. **Run the Application**
     * Point your local web server (Apache in XAMPP) to the project's root directory.
     * Open your browser and navigate to `http://localhost/research-repository`.
 

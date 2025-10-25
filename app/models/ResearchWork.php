@@ -1,6 +1,8 @@
 <?php
 
-require_once __DIR__ . '/Model.php';
+namespace App\Models;
+
+use App\Model;
 
 class ResearchWork extends Model
 {
@@ -237,7 +239,6 @@ class ResearchWork extends Model
      */
     public function getDepartment(bool $assoc = false, bool $assoc_basic = false): Department|array|null
     {
-        require_once __DIR__ . '/Department.php';
         $department = Department::find($this->department_id);
         return ($assoc && $department) ? $department->getAssoc($assoc_basic) : $department;
     }
@@ -252,7 +253,6 @@ class ResearchWork extends Model
      */
     public function getAuthors(bool $assoc = false, bool $assoc_basic = false): array
     {
-        require_once __DIR__ . '/Author.php';
         $authors = [];
 
         $query = "SELECT a.* FROM `authors` a " .

@@ -1,4 +1,7 @@
 .idea
+.vscode
 
 # Ignore configuration files with sensitive data
 config/database.php
+vendor
+node_modules

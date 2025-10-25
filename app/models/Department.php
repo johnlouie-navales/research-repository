@@ -1,6 +1,8 @@
 <?php
 
-require_once __DIR__ . '/Model.php';
+namespace App\Models;
+
+use App\Model;
 
 class Department extends Model
 {
@@ -90,7 +92,6 @@ class Department extends Model
      */
     public function getResearchWorks(bool $assoc = false, bool $assoc_basic = false): array
     {
-        require_once __DIR__ . '/ResearchWork.php';
         return ResearchWork::all($assoc, $assoc_basic, $this);
     }
 
