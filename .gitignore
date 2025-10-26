@@ -2,6 +2,6 @@
 .vscode
 
 # Ignore configuration files with sensitive data
-config/database.php
+app/config/database.php
 vendor
 node_modules

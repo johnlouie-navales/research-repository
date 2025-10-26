@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2025 at 10:01 AM
+-- Generation Time: Oct 26, 2025 at 02:25 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -36,6 +36,16 @@ CREATE TABLE `authors` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `authors`
+--
+
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `created_at`, `updated_at`) VALUES
+(1, 'Maria', 'dela Cruz', 'maria.delacruz@university.edu', '2025-10-25 09:41:51', '2025-10-25 09:41:51'),
+(2, 'John', 'Santos', 'john.santos@university.edu', '2025-10-25 09:41:51', '2025-10-25 09:41:51'),
+(3, 'Chris', 'Reyes', 'chris.reyes@university.edu', '2025-10-25 09:41:51', '2025-10-25 09:41:51'),
+(4, 'Patricia', 'Gonzales', 'pat.gonzales@university.edu', '2025-10-25 09:41:51', '2025-10-25 09:41:51');
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +58,15 @@ CREATE TABLE `departments` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `departments`
+--
+
+INSERT INTO `departments` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'College of Engineering and Technology', '2025-10-25 09:41:51', '2025-10-25 09:41:51'),
+(2, 'College of Arts and Sciences', '2025-10-25 09:41:51', '2025-10-25 09:41:51'),
+(3, 'College of Business and Accountancy', '2025-10-25 09:41:51', '2025-10-25 09:41:51');
 
 -- --------------------------------------------------------
 
@@ -67,6 +86,15 @@ CREATE TABLE `research_works` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `research_works`
+--
+
+INSERT INTO `research_works` (`id`, `title`, `abstract`, `publication_year`, `keywords`, `file_path`, `department_id`, `uploaded_at`, `updated_at`) VALUES
+(1, 'An Innovative System for Efficient Storage and Seamless Access to Research Works', 'This study focuses on the development of a digital repository using PHP and MySQL to manage and retrieve academic research efficiently. The system features advanced sorting and filtering by department...', '2024', 'digital repository, PHP, MySQL, information retrieval', '/uploads/repository_system_paper_2024.pdf', 1, '2025-10-25 09:41:51', '2025-10-25 09:41:51'),
+(2, 'The Impact of Social Media on Political Discourse in Southeast Asia', 'Analyzing the trends of political communication on popular social media platforms, this paper explores the shift in public opinion and civic engagement over the past decade...', '2023', 'social media, politics, southeast asia, discourse analysis', '/uploads/social_media_politics_2023.pdf', 2, '2025-10-25 09:41:51', '2025-10-25 09:41:51'),
+(3, 'Sustainable Business Models for Local E-Commerce Startups', 'This research investigates viable and sustainable business models for small to medium e-commerce enterprises in a post-pandemic economy. It provides a framework for financial and operational sustainability...', '2024', 'e-commerce, sustainability, business models, startups', '/uploads/ecommerce_sustainability_2024.pdf', 3, '2025-10-25 09:41:51', '2025-10-25 09:41:51');
+
 -- --------------------------------------------------------
 
 --
@@ -79,6 +107,17 @@ CREATE TABLE `work_authors` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `work_authors`
+--
+
+INSERT INTO `work_authors` (`work_id`, `author_id`, `created_at`, `updated_at`) VALUES
+(1, 1, '2025-10-25 09:41:51', '2025-10-25 09:41:51'),
+(3, 1, '2025-10-25 09:41:51', '2025-10-25 09:41:51'),
+(1, 2, '2025-10-25 09:41:51', '2025-10-25 09:41:51'),
+(3, 3, '2025-10-25 09:41:51', '2025-10-25 09:41:51'),
+(2, 4, '2025-10-25 09:41:51', '2025-10-25 09:41:51');
 
 --
 -- Indexes for dumped tables
@@ -122,19 +161,19 @@ ALTER TABLE `work_authors`
 -- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `departments`
 --
 ALTER TABLE `departments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `research_works`
 --
 ALTER TABLE `research_works`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
